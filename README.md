@@ -8,7 +8,12 @@ Paloas, simple program for parking systems
 
 What things you need to run the program
 
+```
+git clone git@github.com:popflux/paloas.git paloas_apps
+```
+
 ** Runnning interactive program**
+
 ```
 cd paloas_app
 ```
@@ -24,6 +29,7 @@ ruby main
 ```
 
 ** Read from file**
+
 ```
 cd paloas_app
 ```
