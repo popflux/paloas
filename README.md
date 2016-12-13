@@ -4,7 +4,7 @@ Paloas, simple program for parking systems
 
 ## Getting Started
 
-### Running the programes
+### Running the programs
 
 What things you need to run the program
 
