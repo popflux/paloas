@@ -1,7 +1,33 @@
 require "./lib/paloas/car.rb"
+require "./lib/paloas/parking_lot.rb"
 require "test/unit"
 
 class TestPaloas < Test::Unit::TestCase
+
+  def test_available_slots
+    pl = ParkingLot.new(5)
+    assert_equal(5, ParkingLot.available_slots_count)
+  end
+
+  def test_update_slots
+    ParkingLot.new(2)
+    assert_equal(true, ParkingLot.update_slot(1))
+  end
+
+  def test_available_slot_update
+    ParkingLot.new(3)
+    assert_equal(2, ParkingLot.available_slot_update)
+  end
+
+  def test_parking_lot_info
+    pl = ParkingLot.new(5)
+    assert_equal("\nOutput: \nCreate parking lot with 5 slots\n\n", pl.parking_lot_info)
+  end
+
+  def test_get_all_slots
+    ParkingLot.new(2)
+    assert_equal({1=>false, 2=>false}, ParkingLot.get_all_slots)
+  end
   
   def test_slot_number_for_registration_number 
     car1 = Car.new("reg-num-1", "white", 1)
