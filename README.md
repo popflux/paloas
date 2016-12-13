@@ -9,13 +9,13 @@ Paloas, simple program for parking systems
 What things you need to run the program
 
 ```
-git clone git@github.com:popflux/paloas.git paloas_apps
+clone project
 ```
 
 ** Runnning interactive program**
 
 ```
-cd paloas_app
+go to project directory
 ```
 
 ```
@@ -31,7 +31,7 @@ ruby main
 ** Read from file**
 
 ```
-cd paloas_app
+go to project directory
 ```
 
 ```
@@ -49,7 +49,7 @@ ruby main input.txt
 how to run the automated tests for this system
 
 ```
-cd paloas_app
+go to project directory
 ```
 
 ```
