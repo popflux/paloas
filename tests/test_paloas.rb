@@ -21,7 +21,7 @@ class TestPaloas < Test::Unit::TestCase
 
   def test_parking_lot_info
     pl = ParkingLot.new(5)
-    assert_equal("\nOutput: \nCreate parking lot with 5 slots\n\n", pl.parking_lot_info)
+    assert_equal("\nCreate parking lot with 5 slots\n", pl.parking_lot_info)
   end
 
   def test_get_all_slots
@@ -34,8 +34,8 @@ class TestPaloas < Test::Unit::TestCase
     car2 = Car.new("reg-num-2", "blue", 2)
     car3 = Car.new("reg-num-3", "black", 3)
 
-    assert_equal("\nOutput: \n2\n\n", Car.slot_number_for_registration_number("reg-num-2"))
-    assert_equal("\nOutput: \nNot found\n\n", Car.slot_number_for_registration_number("reg-num-4"))
+    assert_equal("\n2\n", Car.slot_number_for_registration_number("reg-num-2"))
+    assert_equal("\nNot found\n", Car.slot_number_for_registration_number("reg-num-4"))
   
     Car.delete_all
   end
@@ -45,8 +45,8 @@ class TestPaloas < Test::Unit::TestCase
     car2 = Car.new("reg-num-2", "blue", 2)
     car3 = Car.new("reg-num-3", "black", 3)
 
-    assert_equal("\nOutput: \nNot found\n\n", Car.slot_numbers_for_cars_with_colour("green"))
-    assert_equal("\nOutput: \n3\n\n", Car.slot_numbers_for_cars_with_colour("black"))
+    assert_equal("\nNot found\n", Car.slot_numbers_for_cars_with_colour("green"))
+    assert_equal("\n3\n", Car.slot_numbers_for_cars_with_colour("black"))
 
     Car.delete_all
   end
@@ -66,8 +66,8 @@ class TestPaloas < Test::Unit::TestCase
     car2 = Car.new("reg-num-2", "blue", 2)
     car3 = Car.new("reg-num-3", "black", 3)
 
-    assert_equal("\nOutput: \nreg-num-1\n\n", Car.registration_numbers_for_cars_with_colour("white"))
-    assert_equal("\nOutput: \nNot found\n\n", Car.registration_numbers_for_cars_with_colour("green"))
+    assert_equal("\nreg-num-1\n", Car.registration_numbers_for_cars_with_colour("white"))
+    assert_equal("\nNot found\n", Car.registration_numbers_for_cars_with_colour("green"))
 
     Car.delete_all
   end
@@ -77,8 +77,8 @@ class TestPaloas < Test::Unit::TestCase
     car2 = Car.new("reg-num-2", "blue", 2)
     car3 = Car.new("reg-num-3", "black", 3)
 
-    assert_equal("\nOutput: \nSlot number not found\n\n", Car.leave(4))
-    assert_equal("\nOutput: \nSlot number 2 is free\n\n", Car.leave(2))
+    assert_equal("\nSlot number not found\n", Car.leave(4))
+    assert_equal("\nSlot number 2 is free\n", Car.leave(2))
 
     Car.delete_all
   end
@@ -91,8 +91,8 @@ class TestPaloas < Test::Unit::TestCase
   def test_park_car
     ParkingLot.new(1)
 
-    assert_equal("\nOutput: \nAllocated slot numbers: 1\n\n", Car.park("reg-num-1", "red"))
-    assert_equal("\nOutput: \nSorry, parking lot is full\n\n", Car.park("reg-num-2", "red"))
+    assert_equal("\nAllocated slot numbers: 1\n", Car.park("reg-num-1", "red"))
+    assert_equal("\nSorry, parking lot is full\n", Car.park("reg-num-2", "red"))
   
     Car.delete_all
   end
