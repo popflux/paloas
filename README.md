@@ -9,12 +9,20 @@ Paloas, simple program for parking systems
 What things you need to run the program
 
 ```
+cd paloas_app
+```
 
+```
+./main
 ```
 
 ### Running the tests
 
 how to run the automated tests for this system
+
+```
+cd paloas_app
+```
 
 ```
 rake test
