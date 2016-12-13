@@ -23,6 +23,7 @@ class Car
     if current_size == new_size
       return formatted_output("Slot number not found")
     else
+      ParkingLot.restore_parking_spaces(sl)
       return formatted_output("Slot number #{sl} is free")
     end
 
@@ -39,7 +40,7 @@ class Car
   end
 
   def self.registration_numbers_for_cars_with_colour(clr)
-    results = @@cars.select { |k, v| k[:colour] == clr }
+    results = @@cars.select { |k, v| k[:colour].downcase == clr.downcase }
     reg_numbers = results.map { |c| c[:registration_number] }
 
     if results.empty?
@@ -51,7 +52,7 @@ class Car
   end
 
   def self.slot_numbers_for_cars_with_colour(clr)
-    results = @@cars.select { |k, v| k[:colour] == clr }
+    results = @@cars.select { |k, v| k[:colour].downcase == clr.downcase }
     slot_numbers = results.map { |c| c[:slot] }
   	if results.empty?
       return formatted_output("Not found")
@@ -61,7 +62,7 @@ class Car
   end
 
   def self.slot_number_for_registration_number(reg_num)
-    results = @@cars.select { |k, v| k[:registration_number] == reg_num }
+    results = @@cars.select { |k, v| k[:registration_number].downcase == reg_num.downcase }
     if results.empty?
       return formatted_output("Not found")
     else
@@ -99,5 +100,5 @@ class Car
       return formatted_output("Allocated slot numbers: #{given_slot}")
     end
   end
-  
+
 end
