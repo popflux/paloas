@@ -77,4 +77,27 @@ class Car
     @@cars.sort_by { |o| o[:slot] }
   end
 
+  def self.park(reg_num, clr)
+    av_slots = ParkingLot.available_slots_count
+    all_slots = ParkingLot.get_all_slots
+    given_slot = nil
+
+    if av_slots == 0
+      return formatted_output("Sorry, parking lot is full")
+    else
+      all_slots.each do |k, v|  
+        if v == false
+          given_slot = k
+          ParkingLot.update_slot(k)
+          ParkingLot.available_slot_update
+          break
+        end
+      end
+      
+      self.new(reg_num, clr, given_slot)
+
+      return formatted_output("Allocated slot numbers: #{given_slot}")
+    end
+  end
+  
 end

@@ -88,4 +88,13 @@ class TestPaloas < Test::Unit::TestCase
     assert_equal("| 1        |  reg-num-1         |   white    |\n", Car.status)
   end
 
+  def test_park_car
+    ParkingLot.new(1)
+
+    assert_equal("\nOutput: \nAllocated slot numbers: 1\n\n", Car.park("reg-num-1", "red"))
+    assert_equal("\nOutput: \nSorry, parking lot is full\n\n", Car.park("reg-num-2", "red"))
+  
+    Car.delete_all
+  end
+
 end
