@@ -8,6 +8,7 @@ Paloas, simple program for parking systems
 
 What things you need to run the program
 
+** Runnning interactive program**
 ```
 cd paloas_app
 ```
@@ -20,6 +21,21 @@ If cannot run using above command, then
 
 ```
 ruby main
+```
+
+** Read from file**
+```
+cd paloas_app
+```
+
+```
+./main input.txt
+```
+
+If cannot run using above command, then
+
+```
+ruby main input.txt
 ```
 
 ### Running the tests
