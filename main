@@ -1,4 +1,4 @@
-#!/home/popflux/.rvm/rubies/ruby-2.1.2/bin/ruby
+#!/usr/bin/env ruby
 
 require_relative 'lib/paloas/parking_lot'
 require_relative 'lib/paloas/car'
