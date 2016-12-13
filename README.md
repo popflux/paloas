@@ -16,6 +16,12 @@ cd paloas_app
 ./main
 ```
 
+If cannot run using above command, then
+
+```
+ruby main
+```
+
 ### Running the tests
 
 how to run the automated tests for this system
