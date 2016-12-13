@@ -1,5 +1,7 @@
-require_relative 'parking_lot'
-require_relative 'car'
+#!/home/popflux/.rvm/rubies/ruby-2.1.2/bin/ruby
+
+require_relative 'lib/paloas/parking_lot'
+require_relative 'lib/paloas/car'
 
 cmd = ARGV.first
 prompt = "Input: "
