@@ -33,6 +33,11 @@ class ParkingLot
     @@available_slots -= 1
   end
 
+  def self.restore_parking_spaces(num)
+    @@available_slots += 1
+    @@slots[num.to_i] = false
+  end
+
   def parking_lot_info
     return formatted_output("Create parking lot with #{@@available_slots} slots")
   end
